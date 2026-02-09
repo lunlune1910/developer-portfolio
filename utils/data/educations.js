@@ -1,20 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "Khoa học Môi trường",
+    duration: "2024 - Hiện tại",
+    institution: "Đại học Y Nguyên Bội (Đài Loan)",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "Kế toán & Quản trị Tài chính",
+    duration: "2020 - 2023",
+    institution: "Đại học Nông Lâm Bắc Giang",
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "Công nghệ Thông tin",
+    duration: "2017 - 2020",
+    institution: "Cao đẳng Công nghệ Việt - Hàn",
   }
 ]

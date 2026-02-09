@@ -7,19 +7,22 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+import StatsSection from "./components/homepage/stats";
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  if (!personalData.devUsername) return [];
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  try {
+    const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
+    return filtered;
+  } catch {
+    return [];
   }
-
-  const data = await res.json();
-
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
 };
 
 export default async function Home() {
@@ -28,6 +31,7 @@ export default async function Home() {
   return (
     <div suppressHydrationWarning >
       <HeroSection />
+      <StatsSection />
       <AboutSection />
       <Experience />
       <Skills />

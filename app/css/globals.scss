@@ -10,9 +10,37 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1224;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8228ec, #f626af);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9b4dff, #ff4dc4);
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(130, 40, 236, 0.3);
+  color: #16f2b3;
 }
 
 #sticky-card-1 {

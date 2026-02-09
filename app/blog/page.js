@@ -2,16 +2,21 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
+import LocalBlogList from "../components/homepage/blog/local-blog-list";
 
 async function getBlogs() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  if (!personalData.devUsername) return [];
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  try {
+    const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    return data;
+  } catch {
+    return [];
   }
-
-  const data = await res.json();
-  return data;
 };
 
 async function page() {
@@ -29,14 +34,20 @@ async function page() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-        {
-          blogs.map((blog, i) => (
-            blog?.cover_image &&
-            <BlogCard blog={blog} key={i} />
-          ))
-        }
-      </div>
+      {/* Local blog posts */}
+      <LocalBlogList />
+
+      {/* Dev.to blog posts */}
+      {blogs.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10 mt-8">
+          {
+            blogs.map((blog, i) => (
+              blog?.cover_image &&
+              <BlogCard blog={blog} key={i} />
+            ))
+          }
+        </div>
+      )}
     </div>
   );
 };

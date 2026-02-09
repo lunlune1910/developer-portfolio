@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0d1a"/>
+      <stop offset="50%" stop-color="#0d1224"/>
+      <stop offset="100%" stop-color="#091020"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16f2b3"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5578"/>
+      <stop offset="50%" stop-color="#6b7a99"/>
+      <stop offset="100%" stop-color="#3d4660"/>
+    </linearGradient>
+    <linearGradient id="pipeGradH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a5578"/>
+      <stop offset="50%" stop-color="#6b7a99"/>
+      <stop offset="100%" stop-color="#3d4660"/>
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1f3a"/>
+      <stop offset="100%" stop-color="#0f1225"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f3a" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Glow orbs -->
+  <circle cx="300" cy="320" r="150" fill="#f59e0b" opacity="0.05" filter="url(#glow)"/>
+  <circle cx="900" cy="300" r="180" fill="#16f2b3" opacity="0.05" filter="url(#glow)"/>
+  <circle cx="600" cy="500" r="100" fill="#0ea5e9" opacity="0.04" filter="url(#glow)"/>
+
+  <!-- Left side: Pipe illustration -->
+  <!-- Vertical pipe -->
+  <rect x="120" y="120" width="50" height="220" rx="4" fill="url(#pipeGrad)" opacity="0.8"/>
+  <rect x="125" y="120" width="10" height="220" fill="#8892b0" opacity="0.15"/>
+  <!-- Elbow joint -->
+  <ellipse cx="170" cy="340" rx="50" ry="30" fill="none" stroke="url(#pipeGrad)" stroke-width="50" stroke-dasharray="78.5 78.5" transform="rotate(0)" opacity="0.8"/>
+  <!-- Horizontal pipe -->
+  <rect x="170" y="340" width="200" height="50" rx="4" fill="url(#pipeGradH)" opacity="0.8"/>
+  <rect x="170" y="345" width="200" height="10" fill="#8892b0" opacity="0.15"/>
+
+  <!-- Pipe measurement marks -->
+  <line x1="100" y1="140" x2="100" y2="320" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <line x1="95" y1="140" x2="105" y2="140" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <line x1="95" y1="320" x2="105" y2="320" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <text x="88" y="235" font-family="monospace" font-size="11" fill="#f59e0b" text-anchor="end" opacity="0.8">L1</text>
+
+  <line x1="190" y1="405" x2="350" y2="405" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <line x1="190" y1="400" x2="190" y2="410" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <line x1="350" y1="400" x2="350" y2="410" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <text x="270" y="422" font-family="monospace" font-size="11" fill="#f59e0b" text-anchor="middle" opacity="0.8">L2</text>
+
+  <!-- Angle arc -->
+  <path d="M 145 290 A 50 50 0 0 1 175 320" fill="none" stroke="#16f2b3" stroke-width="1.5" opacity="0.6"/>
+  <text x="172" y="296" font-family="monospace" font-size="10" fill="#16f2b3" opacity="0.8">45°</text>
+
+  <!-- Arrow from pipe to phone -->
+  <line x1="400" y1="310" x2="490" y2="310" stroke="#16f2b3" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+  <polygon points="490,305 502,310 490,315" fill="#16f2b3" opacity="0.5"/>
+
+  <!-- Center: Phone mockup -->
+  <g transform="translate(520, 130)">
+    <!-- Phone body -->
+    <rect x="0" y="0" width="160" height="330" rx="20" fill="url(#phoneGrad)" stroke="#2a2e5a" stroke-width="2"/>
+    <!-- Screen -->
+    <rect x="8" y="30" width="144" height="270" rx="4" fill="#0a0d1a"/>
+    <!-- Notch -->
+    <rect x="50" y="6" width="60" height="16" rx="8" fill="#0a0d1a"/>
+
+    <!-- App UI inside screen -->
+    <!-- App header -->
+    <rect x="12" y="38" width="136" height="32" rx="4" fill="#1a1443"/>
+    <text x="80" y="58" font-family="monospace" font-size="11" fill="#16f2b3" text-anchor="middle" font-weight="bold">PipeFit Pro</text>
+
+    <!-- Input fields -->
+    <rect x="16" y="80" width="128" height="28" rx="6" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="24" y="92" font-family="monospace" font-size="8" fill="#8892b0">Pipe Size</text>
+    <text x="24" y="102" font-family="monospace" font-size="11" fill="#16f2b3" font-weight="bold">6 inch</text>
+
+    <rect x="16" y="114" width="128" height="28" rx="6" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="24" y="126" font-family="monospace" font-size="8" fill="#8892b0">Angle</text>
+    <text x="24" y="136" font-family="monospace" font-size="11" fill="#f59e0b" font-weight="bold">45°</text>
+
+    <!-- Calculate button -->
+    <rect x="16" y="152" width="128" height="30" rx="15" fill="#16f2b3" opacity="0.9"/>
+    <text x="80" y="171" font-family="monospace" font-size="11" fill="#0a0d1a" text-anchor="middle" font-weight="bold">CALCULATE</text>
+
+    <!-- Results -->
+    <rect x="16" y="192" width="128" height="92" rx="8" fill="#0f1225" stroke="#16f2b3" stroke-width="1" opacity="0.6"/>
+    <text x="80" y="210" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Results</text>
+    <line x1="24" y1="218" x2="136" y2="218" stroke="#2a2e5a" stroke-width="0.5"/>
+
+    <text x="24" y="233" font-family="monospace" font-size="8" fill="#8892b0">Cut Length</text>
+    <text x="136" y="233" font-family="monospace" font-size="11" fill="#16f2b3" text-anchor="end" font-weight="bold">152.4mm</text>
+
+    <text x="24" y="252" font-family="monospace" font-size="8" fill="#8892b0">Offset</text>
+    <text x="136" y="252" font-family="monospace" font-size="11" fill="#f59e0b" text-anchor="end" font-weight="bold">76.2mm</text>
+
+    <text x="24" y="271" font-family="monospace" font-size="8" fill="#8892b0">Travel</text>
+    <text x="136" y="271" font-family="monospace" font-size="11" fill="#0ea5e9" text-anchor="end" font-weight="bold">107.8mm</text>
+  </g>
+
+  <!-- Right side: Formula becoming simple -->
+  <g transform="translate(740, 160)">
+    <!-- Complex formula (faded) -->
+    <rect x="0" y="0" width="370" height="55" rx="8" fill="#0f1225" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+    <text x="185" y="22" font-family="monospace" font-size="10" fill="#ef4444" text-anchor="middle" opacity="0.5">Complex Formula</text>
+    <text x="185" y="40" font-family="monospace" font-size="12" fill="#8892b0" text-anchor="middle" opacity="0.5">L = D × tan(θ/2) × √(1 + cos²α)</text>
+    <!-- Strike through -->
+    <line x1="30" y1="28" x2="340" y2="28" stroke="#ef4444" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Arrow down -->
+    <line x1="185" y1="60" x2="185" y2="90" stroke="#16f2b3" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+    <polygon points="180,88 185,98 190,88" fill="#16f2b3" opacity="0.6"/>
+
+    <!-- Simple result -->
+    <rect x="0" y="100" width="370" height="55" rx="8" fill="#0f1225" stroke="#16f2b3" stroke-width="1.5"/>
+    <text x="185" y="122" font-family="monospace" font-size="10" fill="#16f2b3" text-anchor="middle">PipeFit Pro</text>
+    <text x="185" y="142" font-family="monospace" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Enter 2 numbers → Get result ✓</text>
+  </g>
+
+  <!-- Stats row -->
+  <g transform="translate(740, 340)">
+    <rect x="0" y="0" width="115" height="70" rx="8" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="57" y="30" font-family="monospace" font-size="22" fill="#16f2b3" text-anchor="middle" font-weight="bold">80%</text>
+    <text x="57" y="50" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Time Saved</text>
+
+    <rect x="128" y="0" width="115" height="70" rx="8" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="185" y="30" font-family="monospace" font-size="22" fill="#f59e0b" text-anchor="middle" font-weight="bold">2</text>
+    <text x="185" y="50" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Inputs Only</text>
+
+    <rect x="256" y="0" width="115" height="70" rx="8" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="313" y="30" font-family="monospace" font-size="22" fill="#0ea5e9" text-anchor="middle" font-weight="bold">0</text>
+    <text x="313" y="50" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Errors</text>
+  </g>
+
+  <!-- Testimonial -->
+  <g transform="translate(740, 435)">
+    <rect x="0" y="0" width="370" height="60" rx="10" fill="#0f1225" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    <text x="15" y="20" font-family="monospace" font-size="16" fill="#f59e0b" opacity="0.8">"</text>
+    <text x="30" y="24" font-family="sans-serif" font-size="10" fill="#d3d8e8" font-style="italic">5 min instead of 30 min.</text>
+    <text x="30" y="42" font-family="sans-serif" font-size="10" fill="#d3d8e8" font-style="italic">Thanks to your App!</text>
+    <text x="340" y="50" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="end">— Engineer friend</text>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent1)" opacity="0.6"/>
+
+  <!-- Bottom gradient line -->
+  <rect x="200" y="620" width="800" height="2" rx="1" fill="url(#accent2)" opacity="0.4"/>
+
+  <!-- Tag badges -->
+  <g transform="translate(80, 560)">
+    <rect x="0" y="0" width="65" height="26" rx="13" fill="#16f2b3" opacity="0.12"/>
+    <text x="32" y="17" font-family="monospace" font-size="10" fill="#16f2b3" text-anchor="middle">Flutter</text>
+
+    <rect x="75" y="0" width="65" height="26" rx="13" fill="#f59e0b" opacity="0.12"/>
+    <text x="107" y="17" font-family="monospace" font-size="10" fill="#f59e0b" text-anchor="middle">Python</text>
+
+    <rect x="150" y="0" width="90" height="26" rx="13" fill="#0ea5e9" opacity="0.12"/>
+    <text x="195" y="17" font-family="monospace" font-size="10" fill="#0ea5e9" text-anchor="middle">Mobile App</text>
+
+    <rect x="250" y="0" width="90" height="26" rx="13" fill="#ec4899" opacity="0.12"/>
+    <text x="295" y="17" font-family="monospace" font-size="10" fill="#ec4899" text-anchor="middle">Engineering</text>
+  </g>
+</svg>

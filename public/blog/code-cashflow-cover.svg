@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0d1a"/>
+      <stop offset="50%" stop-color="#0d1224"/>
+      <stop offset="100%" stop-color="#070a18"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16f2b3"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8228ec"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f3a" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Glow orbs -->
+  <circle cx="220" cy="280" r="130" fill="#f59e0b" opacity="0.05" filter="url(#glow)"/>
+  <circle cx="600" cy="320" r="160" fill="#16f2b3" opacity="0.04" filter="url(#glow)"/>
+  <circle cx="980" cy="280" r="130" fill="#22c55e" opacity="0.05" filter="url(#glow)"/>
+
+  <!-- === PILLAR 1: ACCOUNTING (Left) === -->
+  <g transform="translate(80, 140)">
+    <!-- Card -->
+    <rect x="0" y="0" width="300" height="320" rx="16" fill="#0f1225" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+
+    <!-- Icon: Balance scale -->
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#f59e0b" stroke-width="2.5" opacity="0.8"/>
+      <line x1="0" y1="10" x2="40" y2="10" stroke="#f59e0b" stroke-width="2" opacity="0.8"/>
+      <line x1="14" y1="0" x2="26" y2="0" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <!-- Left pan -->
+      <path d="M 0 10 L -5 30 L 12 30 Z" fill="#f59e0b" opacity="0.3"/>
+      <!-- Right pan -->
+      <path d="M 40 10 L 28 30 L 45 30 Z" fill="#f59e0b" opacity="0.3"/>
+      <!-- Base -->
+      <rect x="10" y="40" width="20" height="4" rx="2" fill="#f59e0b" opacity="0.5"/>
+    </g>
+
+    <!-- Title -->
+    <text x="150" y="100" font-family="sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="bold">ACCOUNTING</text>
+    <text x="150" y="120" font-family="sans-serif" font-size="11" fill="#8892b0" text-anchor="middle">Optimization Mindset</text>
+
+    <!-- Divider -->
+    <line x1="30" y1="135" x2="270" y2="135" stroke="#f59e0b" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Balance sheet mini -->
+    <rect x="30" y="150" width="240" height="90" rx="6" fill="#0a0d1a" stroke="#2a2e5a" stroke-width="0.5"/>
+    <text x="150" y="170" font-family="monospace" font-size="10" fill="#f59e0b" text-anchor="middle">Balance Sheet</text>
+    <line x1="150" y1="178" x2="150" y2="232" stroke="#2a2e5a" stroke-width="0.5"/>
+    <line x1="30" y1="178" x2="270" y2="178" stroke="#2a2e5a" stroke-width="0.5"/>
+    <text x="90" y="195" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Assets</text>
+    <text x="210" y="195" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Liabilities</text>
+    <text x="90" y="215" font-family="monospace" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">RAM</text>
+    <text x="150" y="215" font-family="monospace" font-size="14" fill="#8892b0" text-anchor="middle">=</text>
+    <text x="210" y="215" font-family="monospace" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">$Cost</text>
+
+    <!-- Keyword -->
+    <rect x="75" y="258" width="150" height="28" rx="14" fill="#f59e0b" opacity="0.12"/>
+    <text x="150" y="276" font-family="monospace" font-size="11" fill="#f59e0b" text-anchor="middle" font-weight="bold">Zero Waste Code</text>
+
+    <!-- Label -->
+    <text x="150" y="310" font-family="monospace" font-size="9" fill="#4a5578" text-anchor="middle">Financial Prudence</text>
+  </g>
+
+  <!-- === PILLAR 2: IT / CODE (Center) === -->
+  <g transform="translate(420, 140)">
+    <!-- Card with gradient border -->
+    <rect x="0" y="0" width="360" height="320" rx="16" fill="#0f1225" stroke="url(#blueGrad)" stroke-width="1.5"/>
+
+    <!-- Code brackets -->
+    <text x="130" y="55" font-family="monospace" font-size="40" fill="#8228ec" opacity="0.7" font-weight="bold">{</text>
+    <text x="220" y="55" font-family="monospace" font-size="40" fill="#ec4899" opacity="0.7" font-weight="bold">}</text>
+
+    <!-- Title -->
+    <text x="180" y="90" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">IT / CODE</text>
+    <text x="180" y="112" font-family="sans-serif" font-size="11" fill="#8892b0" text-anchor="middle">The Execution Tool</text>
+
+    <!-- Divider -->
+    <line x1="40" y1="128" x2="320" y2="128" stroke="url(#blueGrad)" stroke-width="0.5" opacity="0.4"/>
+
+    <!-- Code editor mockup -->
+    <rect x="30" y="142" width="300" height="115" rx="8" fill="#0a0d1a" stroke="#2a2e5a" stroke-width="0.5"/>
+    <circle cx="48" cy="156" r="4" fill="#ef4444" opacity="0.7"/>
+    <circle cx="62" cy="156" r="4" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="76" cy="156" r="4" fill="#22c55e" opacity="0.7"/>
+    <text x="45" y="180" font-family="monospace" font-size="9" fill="#8228ec">const</text>
+    <text x="78" y="180" font-family="monospace" font-size="9" fill="#16f2b3">studio</text>
+    <text x="114" y="180" font-family="monospace" font-size="9" fill="#8892b0">=</text>
+    <text x="123" y="180" font-family="monospace" font-size="9" fill="#ec4899">{</text>
+    <text x="55" y="196" font-family="monospace" font-size="9" fill="#0ea5e9">accounting:</text>
+    <text x="133" y="196" font-family="monospace" font-size="9" fill="#f59e0b">optimize()</text>
+    <text x="55" y="212" font-family="monospace" font-size="9" fill="#0ea5e9">envScience:</text>
+    <text x="133" y="212" font-family="monospace" font-size="9" fill="#22c55e">sustain()</text>
+    <text x="55" y="228" font-family="monospace" font-size="9" fill="#0ea5e9">execution:</text>
+    <text x="133" y="228" font-family="monospace" font-size="9" fill="#ec4899">build()</text>
+    <text x="45" y="244" font-family="monospace" font-size="9" fill="#ec4899">}</text>
+
+    <!-- MonStudio badge -->
+    <rect x="90" y="272" width="180" height="30" rx="15" fill="url(#blueGrad)" opacity="0.8"/>
+    <text x="180" y="292" font-family="sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">MonStudio</text>
+
+    <!-- Label -->
+    <text x="180" y="310" font-family="monospace" font-size="9" fill="#4a5578" text-anchor="middle" opacity="0">.</text>
+  </g>
+
+  <!-- === PILLAR 3: ENVIRONMENT (Right) === -->
+  <g transform="translate(820, 140)">
+    <!-- Card -->
+    <rect x="0" y="0" width="300" height="320" rx="16" fill="#0f1225" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+
+    <!-- Ecosystem icon: tree/cycle -->
+    <g transform="translate(130, 25)">
+      <!-- Recycling arrows circle -->
+      <circle cx="20" cy="22" r="18" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.6"/>
+      <!-- Leaf shapes -->
+      <ellipse cx="20" cy="10" rx="8" ry="14" fill="#22c55e" opacity="0.25" transform="rotate(-15 20 10)"/>
+      <ellipse cx="30" cy="25" rx="7" ry="12" fill="#16a34a" opacity="0.2" transform="rotate(30 30 25)"/>
+      <ellipse cx="10" cy="30" rx="6" ry="10" fill="#22c55e" opacity="0.2" transform="rotate(-30 10 30)"/>
+      <!-- Center dot -->
+      <circle cx="20" cy="22" r="4" fill="#22c55e" opacity="0.6"/>
+    </g>
+
+    <!-- Title -->
+    <text x="150" y="100" font-family="sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">ENV SCIENCE</text>
+    <text x="150" y="120" font-family="sans-serif" font-size="11" fill="#8892b0" text-anchor="middle">Sustainable Thinking</text>
+
+    <!-- Divider -->
+    <line x1="30" y1="135" x2="270" y2="135" stroke="#22c55e" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Ecosystem diagram -->
+    <g transform="translate(50, 155)">
+      <!-- Clean Architecture nodes -->
+      <rect x="60" y="0" width="80" height="24" rx="12" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="0.5"/>
+      <text x="100" y="16" font-family="monospace" font-size="9" fill="#22c55e" text-anchor="middle">Feature</text>
+
+      <line x1="100" y1="24" x2="60" y2="45" stroke="#22c55e" stroke-width="0.5" opacity="0.4"/>
+      <line x1="100" y1="24" x2="140" y2="45" stroke="#22c55e" stroke-width="0.5" opacity="0.4"/>
+
+      <rect x="15" y="45" width="90" height="24" rx="12" fill="#16a34a" opacity="0.12" stroke="#22c55e" stroke-width="0.5"/>
+      <text x="60" y="61" font-family="monospace" font-size="9" fill="#16a34a" text-anchor="middle">Clean Code</text>
+
+      <rect x="115" y="45" width="80" height="24" rx="12" fill="#16a34a" opacity="0.12" stroke="#22c55e" stroke-width="0.5"/>
+      <text x="155" y="61" font-family="monospace" font-size="9" fill="#16a34a" text-anchor="middle">Scalable</text>
+
+      <line x1="60" y1="69" x2="100" y2="85" stroke="#22c55e" stroke-width="0.5" opacity="0.4"/>
+      <line x1="155" y1="69" x2="100" y2="85" stroke="#22c55e" stroke-width="0.5" opacity="0.4"/>
+
+      <rect x="55" y="85" width="90" height="24" rx="12" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="0.8"/>
+      <text x="100" y="101" font-family="monospace" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="bold">Sustainable</text>
+    </g>
+
+    <!-- Keyword -->
+    <rect x="60" y="258" width="180" height="28" rx="14" fill="#22c55e" opacity="0.12"/>
+    <text x="150" y="276" font-family="monospace" font-size="11" fill="#22c55e" text-anchor="middle" font-weight="bold">No Tech Debt</text>
+
+    <!-- Label -->
+    <text x="150" y="310" font-family="monospace" font-size="9" fill="#4a5578" text-anchor="middle">Systems Vision</text>
+  </g>
+
+  <!-- Connection arrows: Left → Center -->
+  <line x1="380" y1="300" x2="420" y2="300" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.4"/>
+  <polygon points="418,296 426,300 418,304" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- Connection arrows: Right → Center -->
+  <line x1="820" y1="300" x2="780" y2="300" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.4"/>
+  <polygon points="782,296 774,300 782,304" fill="#22c55e" opacity="0.5"/>
+
+  <!-- Bottom quote -->
+  <g transform="translate(300, 500)">
+    <rect x="0" y="0" width="600" height="50" rx="25" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="300" y="20" font-family="sans-serif" font-size="12" fill="#8892b0" text-anchor="middle" font-style="italic">"No path in life is a detour."</text>
+    <text x="300" y="38" font-family="monospace" font-size="10" fill="#16f2b3" text-anchor="middle">IT × Accounting × Environment = MonStudio</text>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="400" height="3" fill="url(#accent2)" opacity="0.5"/>
+  <rect x="400" y="0" width="400" height="3" fill="url(#blueGrad)" opacity="0.5"/>
+  <rect x="800" y="0" width="400" height="3" fill="url(#accent3)" opacity="0.5"/>
+
+  <!-- Tag badges -->
+  <g transform="translate(80, 580)">
+    <rect x="0" y="0" width="72" height="26" rx="13" fill="#f59e0b" opacity="0.12"/>
+    <text x="36" y="17" font-family="monospace" font-size="10" fill="#f59e0b" text-anchor="middle">Mindset</text>
+
+    <rect x="82" y="0" width="95" height="26" rx="13" fill="#8228ec" opacity="0.12"/>
+    <text x="129" y="17" font-family="monospace" font-size="10" fill="#8b5cf6" text-anchor="middle">Accounting</text>
+
+    <rect x="187" y="0" width="110" height="26" rx="13" fill="#22c55e" opacity="0.12"/>
+    <text x="242" y="17" font-family="monospace" font-size="10" fill="#22c55e" text-anchor="middle">Sustainability</text>
+
+    <rect x="307" y="0" width="90" height="26" rx="13" fill="#ec4899" opacity="0.12"/>
+    <text x="352" y="17" font-family="monospace" font-size="10" fill="#ec4899" text-anchor="middle">MonStudio</text>
+  </g>
+</svg>

@@ -1,4 +1,6 @@
+"use client";
 // @flow strict
+import { useLanguage } from '@/app/context/LanguageContext';
 import { timeConverter } from '@/utils/time-converter';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +8,7 @@ import { BsHeartFill } from 'react-icons/bs';
 import { FaCommentAlt } from 'react-icons/fa';
 
 function BlogCard({ blog }) {
+  const { t } = useLanguage();
 
   return (
     <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
@@ -41,7 +44,7 @@ function BlogCard({ blog }) {
           </p>
         </Link>
         <p className='mb-2 text-sm text-[#16f2b3]'>
-          {`${blog.reading_time_minutes} Min Read`}
+          {`${blog.reading_time_minutes} ${t("blog.minRead")}`}
         </p>
         <p className='text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3'>
           {blog.description}

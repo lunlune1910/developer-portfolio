@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0d1a"/>
+      <stop offset="50%" stop-color="#0d1224"/>
+      <stop offset="100%" stop-color="#080b1c"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16f2b3"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8228ec"/>
+    </linearGradient>
+    <linearGradient id="unicornGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="33%" stop-color="#ec4899"/>
+      <stop offset="66%" stop-color="#8228ec"/>
+      <stop offset="100%" stop-color="#16f2b3"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f3a" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+    <pattern id="pixels" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="7" height="7" fill="#1a1f3a" opacity="0.15"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Pixel pattern overlay on left side -->
+  <rect x="0" y="0" width="500" height="630" fill="url(#pixels)" opacity="0.3"/>
+
+  <!-- Glow orbs -->
+  <circle cx="250" cy="300" r="150" fill="#ec4899" opacity="0.04" filter="url(#glow)"/>
+  <circle cx="950" cy="300" r="150" fill="#16f2b3" opacity="0.04" filter="url(#glow)"/>
+  <circle cx="600" cy="500" r="100" fill="#8228ec" opacity="0.04" filter="url(#glow)"/>
+
+  <!-- === LEFT: Design Side (Photoshop mockup) === -->
+  <g transform="translate(60, 110)">
+    <!-- Photoshop-like canvas -->
+    <rect x="0" y="0" width="340" height="400" rx="12" fill="#1a1f3a" stroke="#2a2e5a" stroke-width="1"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="340" height="30" rx="12" fill="#0f1225"/>
+    <rect x="0" y="12" width="340" height="18" fill="#0f1225"/>
+    <circle cx="18" cy="15" r="5" fill="#ef4444" opacity="0.7"/>
+    <circle cx="34" cy="15" r="5" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="50" cy="15" r="5" fill="#22c55e" opacity="0.7"/>
+    <text x="170" y="19" font-family="sans-serif" font-size="9" fill="#8892b0" text-anchor="middle">Adobe Photoshop — MonStudio</text>
+
+    <!-- Canvas area -->
+    <rect x="10" y="40" width="320" height="345" rx="4" fill="#0a0d1a" stroke="#2a2e5a" stroke-width="0.5"/>
+
+    <!-- Toolbar left strip -->
+    <rect x="12" y="42" width="24" height="341" rx="2" fill="#0f1225"/>
+    <rect x="15" y="50" width="18" height="14" rx="2" fill="#2a2e5a" opacity="0.6"/>
+    <rect x="15" y="70" width="18" height="14" rx="2" fill="#ec4899" opacity="0.3"/>
+    <rect x="15" y="90" width="18" height="14" rx="2" fill="#2a2e5a" opacity="0.6"/>
+    <rect x="15" y="110" width="18" height="14" rx="2" fill="#2a2e5a" opacity="0.6"/>
+    <rect x="15" y="130" width="18" height="14" rx="2" fill="#2a2e5a" opacity="0.6"/>
+
+    <!-- App mockup inside canvas -->
+    <!-- Phone frame -->
+    <rect x="100" y="55" width="160" height="310" rx="18" fill="#0d1224" stroke="#4a5578" stroke-width="1.5"/>
+    <rect x="108" y="75" width="144" height="270" rx="4" fill="#111633"/>
+
+    <!-- Status bar -->
+    <text x="180" y="90" font-family="sans-serif" font-size="8" fill="#8892b0" text-anchor="middle">9:41</text>
+
+    <!-- App header mockup -->
+    <rect x="115" y="97" width="130" height="28" rx="6" fill="#ec4899" opacity="0.2"/>
+    <text x="180" y="115" font-family="sans-serif" font-size="10" fill="#ec4899" text-anchor="middle" font-weight="bold">MonApp</text>
+
+    <!-- Card 1 -->
+    <rect x="115" y="132" width="130" height="50" rx="8" fill="#1a1443" stroke="#2a2e5a" stroke-width="0.5"/>
+    <rect x="122" y="140" width="30" height="30" rx="6" fill="#8228ec" opacity="0.3"/>
+    <rect x="158" y="142" width="60" height="6" rx="3" fill="#4a5578"/>
+    <rect x="158" y="153" width="40" height="5" rx="2.5" fill="#2a2e5a"/>
+    <rect x="158" y="163" width="50" height="5" rx="2.5" fill="#2a2e5a"/>
+
+    <!-- Card 2 -->
+    <rect x="115" y="190" width="130" height="50" rx="8" fill="#1a1443" stroke="#2a2e5a" stroke-width="0.5"/>
+    <rect x="122" y="198" width="30" height="30" rx="6" fill="#16f2b3" opacity="0.3"/>
+    <rect x="158" y="200" width="55" height="6" rx="3" fill="#4a5578"/>
+    <rect x="158" y="211" width="45" height="5" rx="2.5" fill="#2a2e5a"/>
+    <rect x="158" y="221" width="35" height="5" rx="2.5" fill="#2a2e5a"/>
+
+    <!-- Button -->
+    <rect x="125" y="255" width="110" height="30" rx="15" fill="url(#accent2)" opacity="0.6"/>
+    <text x="180" y="274" font-family="sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">Get Started</text>
+
+    <!-- Bottom nav -->
+    <rect x="115" y="295" width="130" height="35" rx="0" fill="#0d1224"/>
+    <circle cx="140" cy="312" r="4" fill="#8892b0" opacity="0.4"/>
+    <circle cx="165" cy="312" r="4" fill="#ec4899" opacity="0.6"/>
+    <circle cx="190" cy="312" r="4" fill="#8892b0" opacity="0.4"/>
+    <circle cx="215" cy="312" r="4" fill="#8892b0" opacity="0.4"/>
+
+    <!-- Pixel measurement guides -->
+    <line x1="95" y1="132" x2="95" y2="182" stroke="#ec4899" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.6"/>
+    <text x="88" y="160" font-family="monospace" font-size="7" fill="#ec4899" text-anchor="end" opacity="0.7">50px</text>
+
+    <line x1="115" y1="340" x2="245" y2="340" stroke="#ec4899" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.6"/>
+    <text x="180" y="350" font-family="monospace" font-size="7" fill="#ec4899" text-anchor="middle" opacity="0.7">130px</text>
+
+    <!-- Color palette -->
+    <rect x="260" y="55" width="60" height="12" rx="2" fill="#ec4899" opacity="0.8"/>
+    <rect x="260" y="71" width="60" height="12" rx="2" fill="#8228ec" opacity="0.8"/>
+    <rect x="260" y="87" width="60" height="12" rx="2" fill="#16f2b3" opacity="0.8"/>
+    <rect x="260" y="103" width="60" height="12" rx="2" fill="#0ea5e9" opacity="0.8"/>
+    <rect x="260" y="119" width="60" height="12" rx="2" fill="#f59e0b" opacity="0.8"/>
+
+    <!-- Label -->
+    <text x="170" y="395" font-family="monospace" font-size="10" fill="#ec4899" text-anchor="middle" opacity="0.7">DESIGN</text>
+  </g>
+
+  <!-- === CENTER: Arrow / Equals === -->
+  <g transform="translate(430, 280)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="url(#unicornGrad)" stroke-width="2" stroke-dasharray="6 3" opacity="0.5"/>
+    <polygon points="50,-5 62,0 50,5" fill="#ec4899" opacity="0.6"/>
+
+    <text x="31" y="-15" font-family="monospace" font-size="10" fill="#8892b0" text-anchor="middle">100%</text>
+    <text x="31" y="20" font-family="monospace" font-size="8" fill="#4a5578" text-anchor="middle">pixel-perfect</text>
+  </g>
+
+  <!-- === RIGHT: Code Side (actual app) === -->
+  <g transform="translate(520, 110)">
+    <!-- Code editor -->
+    <rect x="0" y="0" width="600" height="400" rx="12" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="600" height="30" rx="12" fill="#0a0d1a"/>
+    <rect x="0" y="12" width="600" height="18" fill="#0a0d1a"/>
+    <circle cx="18" cy="15" r="5" fill="#ef4444" opacity="0.7"/>
+    <circle cx="34" cy="15" r="5" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="50" cy="15" r="5" fill="#22c55e" opacity="0.7"/>
+    <text x="300" y="19" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">page.jsx — MonStudio</text>
+
+    <!-- Code content -->
+    <g transform="translate(20, 45)">
+      <text y="15" font-family="monospace" font-size="10">
+        <tspan fill="#8228ec">import</tspan><tspan fill="#8892b0"> { </tspan><tspan fill="#16f2b3">motion</tspan><tspan fill="#8892b0"> } </tspan><tspan fill="#8228ec">from</tspan><tspan fill="#f59e0b"> 'framer-motion'</tspan>
+      </text>
+      <text y="35" font-family="monospace" font-size="10">
+        <tspan fill="#8228ec">import</tspan><tspan fill="#8892b0"> </tspan><tspan fill="#16f2b3">styles</tspan><tspan fill="#8892b0"> </tspan><tspan fill="#8228ec">from</tspan><tspan fill="#f59e0b"> './card.module.css'</tspan>
+      </text>
+      <text y="60" font-family="monospace" font-size="10" fill="#4a5578">// Pixel-perfect from Photoshop</text>
+      <text y="80" font-family="monospace" font-size="10">
+        <tspan fill="#8228ec">const</tspan><tspan fill="#16f2b3"> Card </tspan><tspan fill="#8892b0">= () =&gt; (</tspan>
+      </text>
+      <text y="100" font-family="monospace" font-size="10">
+        <tspan fill="#8892b0">  &lt;</tspan><tspan fill="#ec4899">motion.div</tspan>
+      </text>
+      <text y="120" font-family="monospace" font-size="10">
+        <tspan fill="#0ea5e9">    whileHover</tspan><tspan fill="#8892b0">={{ </tspan><tspan fill="#f59e0b">scale: 1.02</tspan><tspan fill="#8892b0"> }}</tspan>
+      </text>
+      <text y="140" font-family="monospace" font-size="10">
+        <tspan fill="#0ea5e9">    transition</tspan><tspan fill="#8892b0">={{ </tspan><tspan fill="#f59e0b">type: "spring"</tspan><tspan fill="#8892b0"> }}</tspan>
+      </text>
+      <text y="160" font-family="monospace" font-size="10">
+        <tspan fill="#0ea5e9">    className</tspan><tspan fill="#8892b0">={</tspan><tspan fill="#16f2b3">styles</tspan><tspan fill="#8892b0">.</tspan><tspan fill="#16f2b3">card</tspan><tspan fill="#8892b0">}</tspan>
+      </text>
+      <text y="180" font-family="monospace" font-size="10">
+        <tspan fill="#8892b0">  &gt;</tspan>
+      </text>
+      <text y="200" font-family="monospace" font-size="10">
+        <tspan fill="#8892b0">    &lt;</tspan><tspan fill="#ec4899">Image</tspan><tspan fill="#0ea5e9"> src</tspan><tspan fill="#8892b0">={</tspan><tspan fill="#16f2b3">icon</tspan><tspan fill="#8892b0">}</tspan>
+      </text>
+      <text y="220" font-family="monospace" font-size="10">
+        <tspan fill="#0ea5e9">      width</tspan><tspan fill="#8892b0">={</tspan><tspan fill="#f59e0b">30</tspan><tspan fill="#8892b0">}</tspan><tspan fill="#0ea5e9"> height</tspan><tspan fill="#8892b0">={</tspan><tspan fill="#f59e0b">30</tspan><tspan fill="#8892b0">} /&gt;</tspan>
+      </text>
+      <text y="240" font-family="monospace" font-size="10">
+        <tspan fill="#8892b0">    &lt;</tspan><tspan fill="#ec4899">h3</tspan><tspan fill="#8892b0">&gt;{</tspan><tspan fill="#16f2b3">title</tspan><tspan fill="#8892b0">}&lt;/</tspan><tspan fill="#ec4899">h3</tspan><tspan fill="#8892b0">&gt;</tspan>
+      </text>
+      <text y="260" font-family="monospace" font-size="10">
+        <tspan fill="#8892b0">  &lt;/</tspan><tspan fill="#ec4899">motion.div</tspan><tspan fill="#8892b0">&gt;</tspan>
+      </text>
+      <text y="280" font-family="monospace" font-size="10"><tspan fill="#8892b0">)</tspan></text>
+    </g>
+
+    <!-- CSS snippet at bottom -->
+    <g transform="translate(20, 340)">
+      <text y="12" font-family="monospace" font-size="9" fill="#4a5578">/* card.module.css */</text>
+      <text y="28" font-family="monospace" font-size="9">
+        <tspan fill="#ec4899">.card</tspan><tspan fill="#8892b0"> { </tspan><tspan fill="#0ea5e9">border-radius</tspan><tspan fill="#8892b0">: </tspan><tspan fill="#f59e0b">8px</tspan><tspan fill="#8892b0">; </tspan><tspan fill="#0ea5e9">padding</tspan><tspan fill="#8892b0">: </tspan><tspan fill="#f59e0b">16px</tspan><tspan fill="#8892b0">; }</tspan>
+      </text>
+    </g>
+
+    <!-- Label -->
+    <text x="300" y="395" font-family="monospace" font-size="10" fill="#16f2b3" text-anchor="middle" opacity="0.7">CODE</text>
+  </g>
+
+  <!-- 0.05s stat -->
+  <g transform="translate(440, 530)">
+    <rect x="0" y="0" width="320" height="48" rx="24" fill="#0f1225" stroke="#2a2e5a" stroke-width="1"/>
+    <text x="160" y="20" font-family="monospace" font-size="11" fill="#ec4899" text-anchor="middle" font-weight="bold">0.05s — First Impression</text>
+    <text x="160" y="37" font-family="monospace" font-size="9" fill="#8892b0" text-anchor="middle">Design = Emotion = Trust</text>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent2)" opacity="0.5"/>
+
+  <!-- Tag badges -->
+  <g transform="translate(80, 580)">
+    <rect x="0" y="0" width="60" height="26" rx="13" fill="#ec4899" opacity="0.12"/>
+    <text x="30" y="17" font-family="monospace" font-size="10" fill="#ec4899" text-anchor="middle">UI/UX</text>
+
+    <rect x="70" y="0" width="65" height="26" rx="13" fill="#8228ec" opacity="0.12"/>
+    <text x="102" y="17" font-family="monospace" font-size="10" fill="#8b5cf6" text-anchor="middle">Design</text>
+
+    <rect x="145" y="0" width="65" height="26" rx="13" fill="#f59e0b" opacity="0.12"/>
+    <text x="177" y="17" font-family="monospace" font-size="10" fill="#f59e0b" text-anchor="middle">Adobe</text>
+
+    <rect x="220" y="0" width="65" height="26" rx="13" fill="#16f2b3" opacity="0.12"/>
+    <text x="252" y="17" font-family="monospace" font-size="10" fill="#16f2b3" text-anchor="middle">Flutter</text>
+  </g>
+</svg>
