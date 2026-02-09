@@ -15,6 +15,30 @@ export const metadata = {
   title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
   description:
     "Portfolio của Mạnh Hùng – Founder MonStudio. Chuyên xây dựng giải pháp Mobile & Web hiệu năng cao với Flutter, Next.js, Docker.",
+  openGraph: {
+    title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
+    description:
+      "Portfolio của Mạnh Hùng – Founder MonStudio. Chuyên xây dựng giải pháp Mobile & Web hiệu năng cao với Flutter, Next.js, Docker.",
+    url: "https://monstudio.app",
+    siteName: "MonStudio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MonStudio Portfolio - Mạnh Hùng",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
+    description:
+      "Portfolio của Mạnh Hùng – Founder MonStudio. Chuyên xây dựng giải pháp Mobile & Web hiệu năng cao với Flutter, Next.js, Docker.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
