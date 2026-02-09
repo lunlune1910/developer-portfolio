@@ -1,38 +1,22 @@
-# Dùng bản Node nhẹ nhất (Alpine)
-FROM node:20-alpine AS base
+# Dùng Node 20 Alpine (Nhẹ, ổn định)
+FROM node:20-alpine
 
-# 1. Cài đặt dependencies
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm ci
 
-# 2. Build code
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# 1. Copy file package để cài thư viện trước
+COPY package*.json ./
+
+# 2. Cài đặt thư viện (Dùng npm install cho chắc ăn)
+RUN npm install
+
+# 3. Copy toàn bộ code vào
 COPY . .
-# Tắt thu thập dữ liệu để build nhanh hơn
-ENV NEXT_TELEMETRY_DISABLED 1
+
+# 4. Build web
 RUN npm run build
 
-# 3. Chạy web (Runner)
-FROM base AS runner
-WORKDIR /app
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
+# 5. Mở cổng 3000
 EXPOSE 3000
-ENV PORT 3000
 
-CMD ["node", "server.js"]
+# 6. Chạy web
+CMD ["npm", "start"]
