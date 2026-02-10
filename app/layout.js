@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         <ClientProviders>
           <ScrollProgressBar />
           <ToastContainer />
-          <main className="min-h-screen relative mx-auto px-4 sm:px-6 md:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+          <main className="min-h-screen relative mx-auto px-4 sm:px-6 md:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white overflow-x-clip">
             <Navbar />
             {children}
             <ScrollToTop />
