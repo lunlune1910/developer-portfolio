@@ -16,6 +16,18 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const handleNavClick = () => setIsOpen(false);
 
   const navLinks = [
@@ -28,68 +40,70 @@ function Navbar() {
   ];
 
   return (
-    <nav
-      className={`sticky top-0 z-[100] transition-all duration-500 ${
-        scrolled
-          ? "bg-[#0d1224]/70 backdrop-blur-xl shadow-lg shadow-violet-500/5 -mx-6 sm:-mx-12 px-6 sm:px-12"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="flex items-center justify-between py-4">
-        <Link href="/" className="text-[#16f2b3] text-3xl font-bold hover:scale-105 transition-transform duration-300">
-          MonStudio
-        </Link>
-
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center space-x-1">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                href={link.href}
-              >
-                <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600 relative group">
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-pink-500 to-violet-600 transition-all duration-300 group-hover:w-full" />
-                </div>
-              </Link>
-            </li>
-          ))}
-          <li>
-            <button
-              onClick={toggleLanguage}
-              className="ml-2 px-4 py-2 text-sm font-bold text-[#16f2b3] hover:text-pink-600 transition-all duration-300 cursor-pointer border border-[#16f2b3] rounded-md hover:border-pink-600 hover:scale-105 active:scale-95"
-            >
-              {lang === "en" ? "🇻🇳 VI" : "🇬🇧 EN"}
-            </button>
-          </li>
-        </ul>
-
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden text-white p-2 hover:text-[#16f2b3] transition-colors z-[110]"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Overlay */}
-      <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[105] md:hidden transition-opacity duration-300 ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+    <>
+      <nav
+        className={`sticky top-0 z-[100] transition-all duration-500 ${
+          scrolled
+            ? "bg-[#0d1224]/70 backdrop-blur-xl shadow-lg shadow-violet-500/5 -mx-4 sm:-mx-6 md:-mx-12 px-4 sm:px-6 md:px-12"
+            : "bg-transparent"
         }`}
-        onClick={() => setIsOpen(false)}
-      />
+      >
+        <div className="flex items-center justify-between py-4">
+          <Link href="/" className="text-[#16f2b3] text-3xl font-bold hover:scale-105 transition-transform duration-300">
+            MonStudio
+          </Link>
 
-      {/* Mobile Slide Menu */}
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                  href={link.href}
+                >
+                  <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600 relative group">
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-pink-500 to-violet-600 transition-all duration-300 group-hover:w-full" />
+                  </div>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <button
+                onClick={toggleLanguage}
+                className="ml-2 px-4 py-2 text-sm font-bold text-[#16f2b3] hover:text-pink-600 transition-all duration-300 cursor-pointer border border-[#16f2b3] rounded-md hover:border-pink-600 hover:scale-105 active:scale-95"
+              >
+                {lang === "en" ? "🇻🇳 VI" : "🇬🇧 EN"}
+              </button>
+            </li>
+          </ul>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden text-white p-2 hover:text-[#16f2b3] transition-colors relative z-[120]"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Overlay — rendered outside <nav> via portal-like pattern */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[105] md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Mobile Slide Menu — rendered outside <nav> to avoid stacking context issues */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-[#0d1224]/95 backdrop-blur-xl z-[106] md:hidden transform transition-transform duration-300 ease-out border-l border-[#1b2c68a0] ${
+        className={`fixed top-0 right-0 h-dvh w-72 max-w-[80vw] bg-[#0d1224]/95 backdrop-blur-xl z-[110] md:hidden transform transition-transform duration-300 ease-out border-l border-[#1b2c68a0] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col pt-20 px-6 space-y-2">
+        <div className="flex flex-col pt-20 px-6 space-y-2 overflow-y-auto h-full pb-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -110,7 +124,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
 

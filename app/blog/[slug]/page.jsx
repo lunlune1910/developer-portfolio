@@ -31,8 +31,8 @@ function ContentBlock({ block, index }) {
     case "heading":
       return (
         <FadeInSection direction="fadeUp" delay={0.05}>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mt-12 mb-6 relative">
-            <span className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-[#16f2b3] to-[#8228ec] rounded-full" />
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mt-10 sm:mt-12 mb-4 sm:mb-6 relative pl-5">
+            <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#16f2b3] to-[#8228ec] rounded-full" />
             {block.text}
           </h2>
         </FadeInSection>
@@ -70,8 +70,8 @@ function ContentBlock({ block, index }) {
                 {block.label}
               </div>
             )}
-            <pre className="bg-[#0d1224] p-5 overflow-x-auto">
-              <code className="text-sm md:text-base font-mono text-[#16f2b3] leading-7 whitespace-pre">
+            <pre className="bg-[#0d1224] p-4 md:p-5 overflow-x-auto -mx-px">
+              <code className="text-xs sm:text-sm md:text-base font-mono text-[#16f2b3] leading-7 whitespace-pre">
                 {block.text}
               </code>
             </pre>
@@ -84,7 +84,7 @@ function ContentBlock({ block, index }) {
         <FadeInSection direction="zoomIn" delay={0.1}>
           <blockquote className="my-10 relative">
             <div className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 via-violet-600 to-[#16f2b3] rounded-full" />
-            <p className="text-2xl md:text-3xl font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#16f2b3] via-violet-400 to-pink-500 pl-6">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#16f2b3] via-violet-400 to-pink-500 pl-6">
               {block.text}
             </p>
           </blockquote>
@@ -251,7 +251,7 @@ export default function BlogDetailPage({ params }) {
 
         {/* CTA */}
         <FadeInSection direction="zoomIn" delay={0.1}>
-          <div className="mt-16 p-8 rounded-2xl border border-[#1f223c] bg-gradient-to-br from-[#11152c] to-[#0a0d37] text-center">
+          <div className="mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl border border-[#1f223c] bg-gradient-to-br from-[#11152c] to-[#0a0d37] text-center">
             <p className="text-xl md:text-2xl font-bold text-white mb-3">
               {lang === "vi" ? "Bạn có ý tưởng muốn hiện thực hoá?" : "Got an idea you want to bring to life?"}
             </p>

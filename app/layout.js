@@ -15,6 +15,12 @@ export const metadata = {
   title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
   description:
     "Portfolio của Mạnh Hùng – Founder MonStudio. Chuyên xây dựng giải pháp Mobile & Web hiệu năng cao với Flutter, Next.js, Docker.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    viewportFit: "cover",
+  },
   openGraph: {
     title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
     description:
@@ -48,7 +54,7 @@ export default function RootLayout({ children }) {
         <ClientProviders>
           <ScrollProgressBar />
           <ToastContainer />
-          <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+          <main className="min-h-screen relative mx-auto px-4 sm:px-6 md:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
             <Navbar />
             {children}
             <ScrollToTop />

@@ -14,7 +14,7 @@ function Experience() {
   const experienceList = t("experienceData");
 
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="experience" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
         src="/section.svg"
         alt="Hero"
@@ -62,7 +62,7 @@ function Experience() {
                             {exp.duration}
                           </p>
                         </div>
-                        <div className="flex items-center gap-x-8 px-3 py-5">
+                        <div className="flex items-center gap-x-4 sm:gap-x-8 px-3 py-5">
                           <div className="text-violet-500  transition-all duration-300 hover:scale-125">
                             <BsPersonWorkspace size={36} />
                           </div>
