@@ -7,7 +7,7 @@ import sys
 import ctypes.util
 
 PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROFILE = os.path.join(PROJECT, "public", "profile.png")
+PROFILE = os.path.join(PROJECT, "public", "profile.jpg")
 OUTPUT_SVG = os.path.join(PROJECT, "public", "og-image.svg")
 OUTPUT_PNG = os.path.join(PROJECT, "public", "og-image.png")
 

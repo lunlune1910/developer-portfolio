@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: demo-nextjs-dev
+    container_name: monstudio-dev
     environment:
       - WATCHPACK_POLLING=true
     volumes:
@@ -19,11 +19,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    container_name: demo-nextjs
+    container_name: monstudio-prod
     ports:
       - "3005:3000"
     env_file:
       - .env
+    restart: unless-stopped
 
 volumes:
   node_modules:

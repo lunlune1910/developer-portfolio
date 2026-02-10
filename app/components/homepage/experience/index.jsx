@@ -20,7 +20,7 @@ function Experience() {
         alt="Hero"
         width={1572}
         height={795}
-        className="absolute top-0 -z-10"
+        className="absolute top-0 -z-10 w-full h-auto max-w-full"
       />
 
       <FadeInSection direction="fadeUp">
@@ -55,7 +55,7 @@ function Experience() {
                           alt="Hero"
                           width={1080}
                           height={200}
-                          className="absolute bottom-0 opacity-80"
+                          className="absolute bottom-0 opacity-80 w-full h-auto max-w-full"
                         />
                         <div className="flex justify-center">
                           <p className="text-xs sm:text-sm text-[#16f2b3]">

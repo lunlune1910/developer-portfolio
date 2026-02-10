@@ -97,7 +97,7 @@ function ContentBlock({ block, index }) {
           <div className="mt-12 pt-8 border-t border-[#1f223c]">
             <div className="flex items-center gap-4">
               <Image
-                src="/profile.png"
+                src="/profile.jpg"
                 alt="Manh Hung"
                 width={48}
                 height={48}

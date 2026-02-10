@@ -71,35 +71,53 @@ export async function POST(request) {
   try {
     const payload = await request.json();
     const { name, email, message: userMessage } = payload;
-    const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chat_id = process.env.TELEGRAM_CHAT_ID;
 
-    // Validate environment variables
-    if (!token || !chat_id) {
+    if (!name || !email || !userMessage) {
       return NextResponse.json({
         success: false,
-        message: 'Telegram token or chat ID is missing.',
+        message: 'Name, email, and message are required.',
       }, { status: 400 });
     }
 
     const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
 
-    // Send Telegram message
-    const telegramSuccess = await sendTelegramMessage(token, chat_id, message);
+    const results = { telegram: null, email: null };
 
-    // Send email
-    const emailSuccess = await sendEmail(payload, message);
+    // Try Telegram (optional — skip if not configured)
+    const token = process.env.TELEGRAM_BOT_TOKEN;
+    const chat_id = process.env.TELEGRAM_CHAT_ID;
+    if (token && chat_id) {
+      results.telegram = await sendTelegramMessage(token, chat_id, message);
+    }
 
-    if (telegramSuccess && emailSuccess) {
+    // Try Email (optional — skip if not configured)
+    if (process.env.EMAIL_ADDRESS && process.env.GMAIL_PASSKEY) {
+      results.email = await sendEmail(payload, message);
+    }
+
+    // At least one channel must be configured
+    const configured = results.telegram !== null || results.email !== null;
+    if (!configured) {
+      return NextResponse.json({
+        success: false,
+        message: 'No notification channels configured. Please contact the admin.',
+      }, { status: 500 });
+    }
+
+    // Succeed if at least one channel delivered
+    const anySuccess = results.telegram === true || results.email === true;
+    if (anySuccess) {
       return NextResponse.json({
         success: true,
-        message: 'Message and email sent successfully!',
+        message: 'Message sent successfully!',
+        channels: results,
       }, { status: 200 });
     }
 
     return NextResponse.json({
       success: false,
-      message: 'Failed to send message or email.',
+      message: 'Failed to send message. Please try again later.',
+      channels: results,
     }, { status: 500 });
   } catch (error) {
     console.error('API Error:', error.message);

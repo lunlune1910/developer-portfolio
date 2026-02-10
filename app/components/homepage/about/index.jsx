@@ -28,13 +28,25 @@ function AboutSection() {
           </p>
         </FadeInSection>
         <FadeInSection direction="fadeRight" className="flex justify-center order-1 lg:order-2">
-          <Image
-            src={personalData.profile}
-            width={280}
-            height={280}
-            alt="Mạnh Hùng"
-            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
-          />
+          <div className="relative group cursor-pointer">
+            {/* Spinning gradient ring */}
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full">
+              <div className="absolute inset-0 rounded-full p-[3px] profile-ring">
+                <div className="w-full h-full rounded-full bg-[#0d1224]" />
+              </div>
+
+              {/* Photo */}
+              <div className="absolute inset-[6px] rounded-full overflow-hidden">
+                <Image
+                  src={personalData.profile}
+                  width={320}
+                  height={320}
+                  alt="Mạnh Hùng"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
         </FadeInSection>
       </div>
     </div>

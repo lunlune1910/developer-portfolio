@@ -1,6 +1,6 @@
 export const personalData = {
   name: "MẠNH HÙNG",
-  profile: '/profile.png',
+  profile: '/profile.jpg',
   designation: "Product Builder & Mobile Engineer",
   description: "Xin chào, tôi là Mạnh Hùng – Founder của MonStudio. Tôi chuyên xây dựng các giải pháp Mobile & Web hiệu năng cao để giải quyết các vấn đề thực tế. Các sản phẩm của tôi (như PipeFit Pro, MonChinese) đều tập trung vào sự tối giản, tốc độ và trải nghiệm người dùng xuất sắc.",
   email: 'm.hung2310@gmail.com',

@@ -12,13 +12,16 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -47,6 +50,30 @@ body {
 ::selection {
   background: rgba(130, 40, 236, 0.3);
   color: #16f2b3;
+}
+
+/* Profile spinning gradient ring */
+.profile-ring {
+  background: conic-gradient(
+    from 0deg,
+    #f626af,
+    #8228ec,
+    #16f2b3,
+    #8228ec,
+    #f626af
+  );
+  animation: profile-spin 4s linear infinite;
+}
+
+.group:hover .profile-ring {
+  animation-duration: 2s;
+  filter: brightness(1.4) drop-shadow(0 0 12px rgba(130, 40, 236, 0.5));
+}
+
+@keyframes profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #sticky-card-1 {
