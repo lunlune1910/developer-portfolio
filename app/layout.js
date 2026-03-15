@@ -1,6 +1,5 @@
-// import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-import Script from "next/script"; // 🛠️ CTO ADD: Thêm component Script của Next.js để tối ưu load
+import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ClientProviders from "./components/client-providers";
@@ -10,18 +9,21 @@ import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
+
 const inter = Inter({ subsets: ["latin"] });
+
+// ✅ FIX: Tách viewport ra khỏi metadata theo chuẩn mới của Next.js
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+};
 
 export const metadata = {
   title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
   description:
     "Portfolio của Mạnh Hùng – Founder MonStudio. Chuyên xây dựng giải pháp Mobile & Web hiệu năng cao với Flutter, Next.js, Docker.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    viewportFit: "cover",
-  },
   openGraph: {
     title: "MonStudio - Product Builder & Mobile Engineer | Mạnh Hùng",
     description:
@@ -52,11 +54,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* 🛠️ CTO ADD: Tích hợp Umami Analytics - Tên miền .me - data-website-id chuẩn */}
+        {/* ✅ CTO ADD: Tối ưu load Umami Analytics */}
         <Script
           src="https://analytics.monstudio.me/script.js"
           data-website-id="c39e7f13-2170-4111-a9bd-bd738fe8ebc1"
-          strategy="afterInteractive" // Chạy ngay sau khi web load xong để không làm chậm UI
+          strategy="afterInteractive"
         />
       </head>
       <body className={inter.className}>
@@ -71,7 +73,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </ClientProviders>
       </body>
-      {/* <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} /> */}
     </html>
   );
 }
