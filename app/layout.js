@@ -1,5 +1,6 @@
 // import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ClientProviders from "./components/client-providers";
