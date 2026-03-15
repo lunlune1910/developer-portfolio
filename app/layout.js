@@ -1,5 +1,6 @@
 // import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
+import Script from "next/script"; // 🛠️ CTO ADD: Thêm component Script của Next.js để tối ưu load
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ClientProviders from "./components/client-providers";
@@ -50,6 +51,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* 🛠️ CTO ADD: Tích hợp Umami Analytics - Tên miền .me - data-website-id chuẩn */}
+        <Script
+          src="https://analytics.monstudio.me/script.js"
+          data-website-id="c39e7f13-2170-4111-a9bd-bd738fe8ebc1"
+          strategy="afterInteractive" // Chạy ngay sau khi web load xong để không làm chậm UI
+        />
+      </head>
       <body className={inter.className}>
         <ClientProviders>
           <ScrollProgressBar />
