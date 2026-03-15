@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </ClientProviders>
       </body>
-      {/* <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} /> */}
+      <script defer src="https://analytics.monstudio.me/script.js" data-website-id="c39e7f13-2170-4111-a9bd-bd738fe8ebc1"></script>
     </html>
   );
 }
